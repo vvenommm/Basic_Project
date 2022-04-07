@@ -1,0 +1,16 @@
+package service;
+
+public class UserService {
+
+	//싱글톤 패턴
+	private UserService() {
+		
+	}
+	private static UserService instance;
+	public static UserService getInstane() {
+		if(instance == null) {
+			instance = new UserService();
+		}
+		return instance;
+	}
+}
