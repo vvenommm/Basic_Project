@@ -1,0 +1,21 @@
+package dao;
+
+import service.UserService;
+
+public class UserDao {
+	
+	//싱글톤 패턴
+	private UserDao() {
+		
+	}
+	private static UserDao instance; //객체를 보관해놓을 변수
+	//객체를 빌려주는 메소드. null일 때 생성해서 return.
+	//getInstance를 호출해서 instance를 빌려주는 방식
+	public static UserDao getInstane() { 
+		if(instance == null) {
+			instance = new UserDao();
+		}
+		return instance;
+	}
+
+}
